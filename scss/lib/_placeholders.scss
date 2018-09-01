@@ -1,0 +1,17 @@
+@import '../lib/mixins';
+
+%h-one {
+	@include font-style($font-bold, 1.188em, $gray, uppercase);
+}
+%h-two {
+	@include font-style($font-bold, 3em, $gray, uppercase);
+}
+%social {
+	@include font-style($font-thin, 0.8em, $lightest-gray, lowercase);
+}
+%h3-about {
+	@include font-style($font-bold, 2em, $lightest-gray, uppercase);
+}
+%p-about {
+	@include font-style($font-thin, 1.5em, $lightest-gray, lowercase);
+}

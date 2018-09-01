@@ -1,0 +1,7 @@
+@mixin font-style($font-family, $size, $color, $text-transform, $weight: normal){
+	@if $font-family { font-family: $font-family; }
+	@if $size { font-size: $size; }
+	@if $color { color: $color; }
+	@if $text-transform { text-transform: $text-transform; }
+	@if $weight { font-weight: $weight; }
+}

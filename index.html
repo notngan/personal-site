@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Ngan B. Nguyen</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+		<aside>
+			<div class="logo">
+				<a href="/">
+					<img src="img/logo.png">
+				</a>
+				<h1>ngan<br><span>nguyen</span></h1>
+			</div>
+			<div class="social">
+				<ul>
+					<li><a href="#">github</a><span> notngan</span></li>
+					<li><a href="#">twitter</a><span> notngan</span></li>
+					<li><a href="#">linkedin</a><span> notngan</span></li>
+				</ul>
+			</div>
+		</aside>
+		<main>
+			<ul>
+				<li class="active" id="about">
+					<div class="title">
+						<h2><a href="#about">about me</a></h2>
+					</div>
+					<div class="content" id="content-about">
+						<article class="content-about-me">
+							<div class="about-text">
+								<h3>Hi, I am Ngan</h3>
+								<p>A Front-end Developer who passionates about code, design and things in between</p>
+							</div>
+							<div class="about-avatar">
+								<img src="img/avatar.jpg">
+							</div>
+						</article>
+						<article  class="content-about-skill">
+							
+						</article>
+					</div>
+				</li>
+				<li>
+					<div class="title">
+						<h2><a href="#">portfolio</a></h2>
+					</div>
+					<div class="content">
+						<article></article>
+					</div>
+				</li>
+				<li>
+					<div class="title">
+						<h2><a href="#">contact</a></h2>
+					</div>
+					<div class="content">
+						<article></article>
+					</div>
+				</li>
+			</ul>
+		</main>
+		<script>
+			var titles = document.querySelectorAll('.title');
+			function toggleContent(){
+				titles.forEach(title => title.parentNode.classList.remove('active'));
+				this.parentNode.classList.add('active');
+			}
+			titles.forEach(title =>title.addEventListener('click', toggleContent));
+		</script>
+	</body>
+</html>

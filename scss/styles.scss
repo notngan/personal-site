@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Raleway:300');
+@import 'lib/variables';
+@import 'lib/placeholders';
+@import 'lib/reset';
+
+body {
+	font-size: 20px;
+	background: $gray;
+	display: flex;
+}
+aside {
+	overflow: hidden;
+	padding: 3% 0 3% 3%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.logo {
+		transition: all 0.2s ease;
+		width: 70%;
+		&:hover {
+			background: $amber;
+			cursor: pointer;
+			img {
+				top: 150px;
+				opacity: 0;
+				padding-bottom: 20px;
+			}
+			h1 {
+				top: -58.3px;
+			}
+		}
+		h1 {
+			@extend %h-one;
+			height: 0;
+			position: relative;
+			top: -250px;
+			transition: all 0.2s ease;
+		}
+		img {
+			position: relative;
+			top: 0;
+			width: 100%; 
+			transition: all 0.3s ease;
+		}
+	}
+	.social {
+		width: 100%;
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		a, span {
+			@extend %social;
+			text-decoration: none;
+			transition: all 0.5s ease;
+			position: relative;
+		}
+		span {
+			position: relative;
+			transition: all 0.5s ease;
+			left: -250px;
+		}
+		li {
+			&:hover {
+				a {
+					background: $amber;
+					padding-left: 20px;
+				}
+				span { 
+					left: 0;
+				}
+			}
+		}
+	}
+} 
+main {
+	ul {
+		width: 85vw;
+		display: flex;
+		justify-content: flex-end;
+		overflow: hidden;
+		list-style-type: none;
+		height: 100vh;
+	}
+	li {
+		margin: 0.5px;
+		background: $lighter-gray;
+		width: 100%;
+		transition: all .5s linear;		
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		align-items: stretch;
+		&.active {
+			padding: 3%;
+			flex: 14;
+			flex-direction: column;
+			.content {
+				width: 100%;
+				visibility: visible;
+			}
+			.title {
+				height: auto;
+				h2 {
+					transform: rotate(0deg);
+				}
+			}
+			.about-text {
+				width: 100%;
+				display: block;
+			}
+		}
+		.title {
+			display: flex;
+			align-items: flex-start;
+			transition: all .25s ease;		
+		
+			h2 {
+				&:hover {
+				cursor: pointer; 
+				}
+				transition: all .25s linear;		
+				transform: rotate(90deg);
+				width: 60px;
+				a {
+					line-height: 60px;
+					height: auto;
+					white-space: nowrap;
+					@extend %h-two;
+					text-decoration: none; 
+				}
+			}
+		}
+		.content {
+			align-items: center;
+			visibility: hidden;
+			width: 0;
+			transition: all .25s ease;
+		}
+	}
+}
+#content-about {
+	justify-content: flex-end;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+	padding: 40px 0;
+	.content-about-me {
+		flex: 1;
+		width: 100%;
+		display: flex;
+	}
+	.about-text {
+		padding-bottom: 20px;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-end;
+		flex: 1;
+		h3, p {
+			position: relative;
+			left: 80px;
+		}
+		h3 { 
+			z-index: 999;
+			background: $gray;
+			padding: 0 10px;
+			@extend %h3-about; 
+			white-space: nowrap;
+		}
+		p {
+			@extend %p-about;
+		}
+	}
+	.about-avatar {
+		overflow: hidden;
+		flex: 2;
+		height: 100%;
+		img {
+			width: 100%;
+			float: right;
+		}
+	}
+}
+
