@@ -1,46 +1,69 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Raleway:300');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Raleway:400,900');
 @import 'lib/variables';
 @import 'lib/placeholders';
 @import 'lib/reset';
 
-body {
+body{
+	overflow: hidden;
 	font-size: 20px;
+	height: 100vh;
 	background: $gray;
 	display: flex;
+	background-size: cover;
+	
 }
 aside {
+	background-size: cover;
+	background-position: 70%;
 	overflow: hidden;
-	padding: 3% 0 3% 3%;
+	padding: $padding 0;
+	padding-left: $padding;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	.logo {
-		transition: all 0.2s ease;
+		overflow: hidden;
 		width: 70%;
+		position: relative;
 		&:hover {
-			background: $amber;
 			cursor: pointer;
-			img {
-				top: 150px;
-				opacity: 0;
-				padding-bottom: 20px;
+			h1, svg {
+				transform: translateY(0);
 			}
 			h1 {
-				top: -58.3px;
+				opacity: 1;
+			}
+			svg {
+				opacity: 0;
+				transform: translateY(-100%);
+			}
+		} 
+		h1 {
+			opacity: 0;
+			transform: translateY(100%);
+			height: 100%;
+			width: 100%;
+			background: $amber;
+			transition: all 0.5s ease;
+			padding:.25em .25em 0;
+			line-height: 100%;
+			display: flex;
+			justify-content: flex-end;
+			flex-flow: column;
+			@extend %h-one;
+			position: absolute;
+			bottom: 0;
+			span {
+				opacity: 0.5;
 			}
 		}
-		h1 {
-			@extend %h-one;
-			height: 0;
-			position: relative;
-			top: -250px;
-			transition: all 0.2s ease;
-		}
-		img {
+		svg {		
+			transition: all 0.75s ease;
 			position: relative;
 			top: 0;
-			width: 100%; 
-			transition: all 0.3s ease;
+			margin: 0 auto;
+			height: 100%;
+			width: 100%;
 		}
 	}
 	.social {
@@ -62,6 +85,7 @@ aside {
 		li {
 			&:hover {
 				a {
+					color: $gray;
 					background: $amber;
 					padding-left: 20px;
 				}
@@ -74,16 +98,17 @@ aside {
 } 
 main {
 	ul {
+		&::-webkit-scrollbar{
+		display: none;	
+	}
 		width: 85vw;
 		display: flex;
 		justify-content: flex-end;
 		overflow: hidden;
 		list-style-type: none;
-		height: 100vh;
+		height: 100%;
 	}
 	li {
-		margin: 0.5px;
-		background: $lighter-gray;
 		width: 100%;
 		transition: all .5s linear;		
 		display: flex;
@@ -105,7 +130,6 @@ main {
 				}
 			}
 			.about-text {
-				width: 100%;
 				display: block;
 			}
 		}
@@ -113,7 +137,7 @@ main {
 			display: flex;
 			align-items: flex-start;
 			transition: all .25s ease;		
-		
+			z-index: 1;
 			h2 {
 				&:hover {
 				cursor: pointer; 
@@ -134,50 +158,57 @@ main {
 			align-items: center;
 			visibility: hidden;
 			width: 0;
-			transition: all .25s ease;
+			//transition: all .1s ease;
 		}
 	}
 }
-#content-about {
-	justify-content: flex-end;
-	flex-direction: column;
+#content-container {
 	overflow: hidden;
 	height: 100%;
-	padding: 40px 0;
+	margin-top: $padding;
+}
+#content-about {
+	overflow-y: scroll;
+	height: 100%;
+	position: relative;
+	&::-webkit-scrollbar{
+		display: none;	
+	}
+	article {
+		height: 100%;
+		width: 100%;
+	}
 	.content-about-me {
 		flex: 1;
-		width: 100%;
 		display: flex;
+		position: relative;
 	}
 	.about-text {
-		padding-bottom: 20px;
+		position: relative;
 		display: flex;
+		flex: 1;
 		flex-flow: column;
 		justify-content: flex-end;
-		flex: 1;
-		h3, p {
-			position: relative;
-			left: 80px;
-		}
+		z-index: 99;
 		h3 { 
-			z-index: 999;
-			background: $gray;
-			padding: 0 10px;
 			@extend %h3-about; 
-			white-space: nowrap;
+
 		}
 		p {
 			@extend %p-about;
+			}
 		}
 	}
 	.about-avatar {
 		overflow: hidden;
-		flex: 2;
-		height: 100%;
-		img {
+		img { 			
 			width: 100%;
-			float: right;
+			transform: translateY(-50px);
 		}
+		flex: 1;
+		height: 100%;
+	.content-about-skill {
+		margin-top: $padding;
 	}
 }
 

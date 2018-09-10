@@ -8,9 +8,13 @@
 		<aside>
 			<div class="logo">
 				<a href="/">
-					<img src="img/logo.png">
+					<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+						<path d="M-6.10352e-05 0H149.806L299.611 400H149.806L-6.10352e-05 0Z" fill="#FFBF00"/>
+						<path d="M223.71 0H300V200C300 123.165 285.019 30.5 223.71 0Z" fill="#FFBF00"/>
+						<path d="M76.2904 400H6.86646e-05L6.86646e-05 200C6.86646e-05 276.835 14.9806 369.5 76.2904 400Z" fill="#FFBF00"/>
+					</svg>
+					<h1>ngan<span>bich</span><span>nguyen</span></h1>
 				</a>
-				<h1>ngan<br><span>nguyen</span></h1>
 			</div>
 			<div class="social">
 				<ul>
@@ -22,24 +26,29 @@
 		</aside>
 		<main>
 			<ul>
-				<li class="active" id="about">
+				<li class="active" id="about-me">
 					<div class="title">
 						<h2><a href="#about">about me</a></h2>
-					</div>
-					<div class="content" id="content-about">
-						<article class="content-about-me">
-							<div class="about-text">
-								<h3>Hi, I am Ngan</h3>
-								<p>A Front-end Developer who passionates about code, design and things in between</p>
-							</div>
-							<div class="about-avatar">
-								<img src="img/avatar.jpg">
-							</div>
-						</article>
-						<article  class="content-about-skill">
-							
-						</article>
-					</div>
+          </div>
+          <div id="content-container">
+  					<div class="content" id="content-about">
+              <article class="content-about content-about-me">
+								
+								<!--<div class="about-text">
+									<h3>Hello, I am Ngan.</h3>
+									<p>As a front-end focused developer, I enjoy building good-looking websites that work.</p>
+								</div>-->
+								<div class="about-avatar">
+									<img src="img/avatar.jpg">
+								</div>
+              </article>
+              <article  class="content-about content-about-skill">
+                <p>
+                  lemme use that as my litter box or damn that dog eat too much then proceed to regurgitate all over living room carpet while humans eat dinner or claw your carpet in places everyone can see - why hide my amazing artistic clawing skills?. Poop in litter box, scratch the walls jump five feet high and sideways when a shadow moves, and tuxedo cats always looking dapper and leave hair everywhere lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence purrrrrr eat muffins and poutine until owner comes back or sleep on keyboard pose purrfectly to show my beauty. Put butt in owner's face eat from dog's food knock over christmas tree meow all night but meow to be let in attack the child. Lie on your belly and purr when you are asleep eat a plant, kill a hand. Love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) pounce on unsuspecting person yet proudly present butt to human yet Gate keepers of hell so put butt in owner's face
+                </p>
+              </article>
+            </div>
+          </div>
 				</li>
 				<li>
 					<div class="title">
@@ -59,13 +68,7 @@
 				</li>
 			</ul>
 		</main>
-		<script>
-			var titles = document.querySelectorAll('.title');
-			function toggleContent(){
-				titles.forEach(title => title.parentNode.classList.remove('active'));
-				this.parentNode.classList.add('active');
-			}
-			titles.forEach(title =>title.addEventListener('click', toggleContent));
-		</script>
+		<script src="js/main.js"></script>
+		
 	</body>
 </html>

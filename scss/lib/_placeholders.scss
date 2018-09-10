@@ -1,7 +1,7 @@
 @import '../lib/mixins';
 
 %h-one {
-	@include font-style($font-bold, 1.188em, $gray, uppercase);
+	@include font-style($font-bold, 1.1em, $gray, uppercase);
 }
 %h-two {
 	@include font-style($font-bold, 3em, $gray, uppercase);
@@ -10,8 +10,10 @@
 	@include font-style($font-thin, 0.8em, $lightest-gray, lowercase);
 }
 %h3-about {
-	@include font-style($font-bold, 2em, $lightest-gray, uppercase);
+	@include font-style($font-thin, 2em, $amber, normal);
 }
 %p-about {
-	@include font-style($font-thin, 1.5em, $lightest-gray, lowercase);
+	@include font-style($font-thin, 1.5em, $lightest-gray, none, 500);
 }
+
+
